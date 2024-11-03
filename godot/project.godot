@@ -11,10 +11,20 @@ config_version=5
 [application]
 
 config/name="Game Off 2024"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="res://prototype0/start.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=800
+window/stretch/mode="viewport"
+window/stretch/scale=5.0
+window/stretch/scale_mode="integer"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
