@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 var input_direction : Vector2
+@onready var sprite = $CharacterSprite
 
-var walk_state = "default"
+var walk_state = "idle"
 var flip : bool
 
 func _physics_process(delta):
@@ -27,13 +28,13 @@ func _physics_process(delta):
 		input_direction = input_direction.normalized()
 		
 		if input_direction == Vector2.ZERO:
-			walk_state = "default"
+			walk_state = "idle"
 		else:
-			$AnimatedSprite2D.flip_h = flip
+			sprite.flip_h = flip
 			move_and_collide(input_direction * speed * delta)
 			
 		animate_state()
 
 
 func animate_state():
-	$AnimatedSprite2D.play(walk_state)
+	sprite.play(walk_state)
