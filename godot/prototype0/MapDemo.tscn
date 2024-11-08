@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://fttcw2p5qk6s"]
+
+[ext_resource type="Script" path="res://prototype0/MapDemo.gd" id="1_3jslf"]
+[ext_resource type="Script" path="res://prototype0/FieldMap.gd" id="2_bjmkw"]
+[ext_resource type="FontFile" uid="uid://bi1g3eepf86as" path="res://prototype0/m5_7.tres" id="2_ouv7l"]
+[ext_resource type="PackedScene" uid="uid://cinypmsoj4idj" path="res://prototype0/character_sprite.tscn" id="4_armly"]
+[ext_resource type="Script" path="res://prototype0/SpriteDemoPlayer.gd" id="6_opyr4"]
+[ext_resource type="SpriteFrames" uid="uid://chlvhh7ud5j2u" path="res://prototype0/new_sprite_frames.tres" id="7_h5xgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0wyo"]
+size = Vector2(8, 5.5)
+
+[node name="MapDemo" type="Node2D"]
+script = ExtResource("1_3jslf")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ouv7l")
+
+[node name="FieldMap" type="Node2D" parent="."]
+script = ExtResource("2_bjmkw")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(168, 88)
+motion_mode = 1
+script = ExtResource("6_opyr4")
+
+[node name="CharacterSprite" parent="Player" instance=ExtResource("4_armly")]
+sprite_frames = ExtResource("7_h5xgq")
+animation = &"walk_up"
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_o0wyo")
+
+[connection signal="update_map" from="Player" to="FieldMap" method="_on_player_update_map"]
