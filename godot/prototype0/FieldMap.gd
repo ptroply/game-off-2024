@@ -1,8 +1,8 @@
 extends Node2D
 
 #var tilemap : Array
-@onready var tilemap : Array = [["breakroom",0,0],
-["offices",0,0],
+@onready var tilemap : Array = [["breakroom","jail",0],
+["offices","lobby",0],
 [0,0,0]]
 
 var tile_index : Array = [0,0]

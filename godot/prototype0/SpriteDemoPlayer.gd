@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var input_direction : Vector2
 @onready var sprite = $CharacterSprite
-@export var speed = 30
+@export var speed = 40
 var walk_state = "idle"
 var flip : bool
 var tile_index : Array = [0,0]

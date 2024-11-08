@@ -13,30 +13,13 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	#if Input.is_action_just_released("ui_cancel"):
-		#get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
-	
-	get_node("Player").position
-	var p = $Player.position
-	$Label.text = str("X:", int(p.x), " Y:", int(p.y))
-	
-	#if p.x > 230:
-		#$Player.position.x = 20
-		#tile_index[1] += 1
-	#elif p.x < 20:
-		#$Player.position.x = 230
-		#tile_index[1] -= 1
-	#if p.y > 140:
-		#$Player.position.y = 20
-		#tile_index[0] += 1
-	#elif p.y < 20:
-		#$Player.position.y = 140
-		#tile_index[0] -= 1
-	
-	#var tile_row = tilemap[tile_index[0]]
-	#$FieldMap.update(tile_row[tile_index[1]])
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(_delta: float) -> void:
+	##if Input.is_action_just_released("ui_cancel"):
+		##get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	#
+	#var p = $Player.position
+	#$Label.text = str("X:", int(p.x), " Y:", int(p.y))
 
 
 func _on_deputy_gary_body_entered(body: Node2D) -> void:
