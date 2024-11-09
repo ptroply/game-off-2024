@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var id : int
-signal trigger_entered(event_id)
+@export var id : String
+signal trigger_entered(event_id : String, trigger_position : Vector2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		trigger_entered.emit(id)
+		trigger_entered.emit(id, position)

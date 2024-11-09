@@ -18,6 +18,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ouv7l")
+max_lines_visible = 3
 
 [node name="FieldMap" type="Node2D" parent="."]
 script = ExtResource("2_bjmkw")
