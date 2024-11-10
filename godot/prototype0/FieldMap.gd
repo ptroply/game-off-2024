@@ -1,7 +1,7 @@
 extends Node2D
 
-#var tilemap : Array
-@onready var tilemap : Array = [["breakroom","jail",0],
+var day = 0
+var tilemap : Array = [["breakroom","jail",0],
 ["offices","lobby",0],
 [0,0,0]]
 
@@ -43,7 +43,7 @@ func _on_trigger_entered(id : String, pos : Vector2):
 	var t = text_box.instantiate()
 	add_child(t)
 	
-	await t.start(pos, id, dialogues)
+	await t.start(pos, id, dialogues[day])
 
 func update(tile_code : String):
 	for n in get_children():

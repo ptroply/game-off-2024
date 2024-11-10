@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://prototype0/SpriteDemoPlayer.gd" id="3_7b62h"]
 [ext_resource type="PackedScene" uid="uid://cinypmsoj4idj" path="res://prototype0/character_sprite.tscn" id="4_eujif"]
 [ext_resource type="Texture2D" uid="uid://bu07u3rgse1r" path="res://prototype0/deputy-gary.png" id="5_6aafk"]
-[ext_resource type="SpriteFrames" uid="uid://chlvhh7ud5j2u" path="res://prototype0/new_sprite_frames.tres" id="5_c2wy4"]
+[ext_resource type="SpriteFrames" uid="uid://chlvhh7ud5j2u" path="res://prototype0/player_sprite_frames.tres" id="5_c2wy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bkah"]
 texture = ExtResource("1_34ogf")

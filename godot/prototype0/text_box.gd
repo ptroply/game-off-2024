@@ -5,16 +5,17 @@ var is_top_screen : bool
 @onready var label = $ColorRect/Label
 
 
-func start(target_position : Vector2, id : String, dialogue : Dictionary) -> void:
+func start(target_position : Vector2, id : String, dialogues : Array) -> void:
 	
-	label.text = dialogue.default
+	for d in dialogues:
+		label.text += str(d, "\n")
 	
 	if target_position.y < 80:
 		position.y = 112
 	else: position.y = 0
 	var portrait = load(str("res://Utility/Portraits/",id,".png"))
 	if portrait == null:
-		style.content_margin_left = -1
+		style.content_margin_left = 8
 	else:
 		style.content_margin_left = 44
 		$ColorRect/Sprite2D.set_texture(portrait)

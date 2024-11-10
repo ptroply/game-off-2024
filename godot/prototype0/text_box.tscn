@@ -22,13 +22,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("2_jjoxg")
 theme_override_styles/normal = ExtResource("3_mc2ig")
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla magna massa, malesuada ut urna vitae, rhoncus tempor justo. Suspendisse tortor orci, maximus ut purus id, volutpat luctus dolor.
-Did you get all that?
-
-
-You can talk to me again if you're still confused.
-
-Just walk over there and approach me again."
 autowrap_mode = 2
 text_overrun_behavior = 2
 

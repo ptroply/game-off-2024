@@ -1,3 +1,7 @@
-{
-    "default": "This text is coming from the dialogues JSON file.\n\nIsn't that cool?"
-}
+
+[
+    [
+        "This text was loaded from the dialogues JSON file.",
+        "Search the building and help me find the chief."
+    ]
+]

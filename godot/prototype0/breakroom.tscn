@@ -2613,4 +2613,5 @@ rendering_quadrant_size = 8
 use_kinematic_bodies = true
 
 [node name="DeputyGary" parent="." instance=ExtResource("2_xycsi")]
+position = Vector2(160, 40)
 id = "cop1"

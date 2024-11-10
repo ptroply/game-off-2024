@@ -5,7 +5,7 @@ signal trigger_entered(event_id : String, trigger_position : Vector2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$CharacterSprite.sprite_frames = load(str("res://prototype0/", id,"_sprite_frames.tres"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
