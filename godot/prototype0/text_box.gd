@@ -2,12 +2,17 @@ extends Node2D
 
 var style : StyleBoxFlat = preload("res://prototype0/dialogue_style_box.tres")
 var is_top_screen : bool
-@onready var line_count = $ColorRect/Label.get_line_count()
+@onready var label = $ColorRect/Label
 
-func start(target_position : Vector2, portrait : CompressedTexture2D = null) -> void:
+
+func start(target_position : Vector2, id : String, dialogue : Dictionary) -> void:
+	
+	label.text = dialogue.default
+	
 	if target_position.y < 80:
 		position.y = 112
 	else: position.y = 0
+	var portrait = load(str("res://Utility/Portraits/",id,".png"))
 	if portrait == null:
 		style.content_margin_left = -1
 	else:
@@ -20,8 +25,8 @@ func start(target_position : Vector2, portrait : CompressedTexture2D = null) -> 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("ui_accept"):
-		if $ColorRect/Label.lines_skipped < line_count - 3:
-			$ColorRect/Label.lines_skipped += 3
-		elif $ColorRect/Label.lines_skipped + line_count:
+		if label.lines_skipped < label.get_line_count() - 3:
+			label.lines_skipped += 3
+		elif label.lines_skipped + label.get_line_count():
 			get_tree().paused = false
 			queue_free()
