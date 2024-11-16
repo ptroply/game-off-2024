@@ -8,5 +8,9 @@ tile_map_data = PackedByteArray("AAADAAIAAQAGACwAAAADAAMAAQAGAC0AAAADAAQAAQAGAC4
 tile_set = ExtResource("1_313tk")
 
 [node name="MapActor" parent="." instance=ExtResource("2_t82a8")]
-position = Vector2(104, 32)
+position = Vector2(107, 36)
 id = "chief"
+
+[node name="MapActor2" parent="." instance=ExtResource("2_t82a8")]
+position = Vector2(59, 35)
+id = "stinky"

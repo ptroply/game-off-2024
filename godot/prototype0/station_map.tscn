@@ -8,12 +8,13 @@
 [node name="StationMap" type="Node2D"]
 
 [node name="Breakroom" parent="." instance=ExtResource("1_t1qgr")]
+position = Vector2(0, -16)
 
 [node name="Offices" parent="." instance=ExtResource("2_d3ajw")]
-position = Vector2(0, 160)
+position = Vector2(0, 144)
 
 [node name="Jail" parent="." instance=ExtResource("3_aprxs")]
-position = Vector2(240, 0)
+position = Vector2(240, -16)
 
 [node name="Lobby" parent="." instance=ExtResource("4_vh8w8")]
-position = Vector2(240, 160)
+position = Vector2(240, 144)

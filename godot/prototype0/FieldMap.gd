@@ -49,12 +49,13 @@ func _on_trigger_entered(id : String, pos : Vector2):
 	await tbox.tree_exited
 	
 func _on_dialogue_flag(flag_context) -> void:
-	print(str("dialogue flag activated: ", flag_context))
+	add_context_flag(flag_context)
 
 func update(tile_code : String):
 	for n in get_children():
-		remove_child(n)
-		n.queue_free()
+		if n.name != "Player":
+			remove_child(n)
+			n.queue_free()
 	load_tile(tile_code)
 
 
@@ -64,6 +65,6 @@ func _on_player_update_map(index: Array) -> void:
 	var tile_row = tilemap[tile_index[0]]
 	update(tile_row[tile_index[1]])
 	
-func add_dialogue_context(new_context : String):
+func add_context_flag(new_context : String):
 	context.push_front(new_context)
 	print(str("Context Stack Updated: ", context))
