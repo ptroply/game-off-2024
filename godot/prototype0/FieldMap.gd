@@ -1,6 +1,7 @@
 extends Node2D
 
 var day = 0
+var context = ["default"]
 var tilemap : Array = [["breakroom","jail",0],
 ["offices","lobby",0],
 [0,0,0]]
@@ -33,17 +34,22 @@ func load_tile(tile_code : String):
 	var n = new_map.instantiate()
 	add_child(n)
 	
-	for t : Area2D in n.get_children():
-		print(str(t.name, " loaded, ID: ", t.id))
-		t.trigger_entered.connect(_on_trigger_entered)
+	for trig : Area2D in n.get_children():
+		print(str(trig.name, " loaded, ID: ", trig.id))
+		trig.trigger_entered.connect(_on_trigger_entered)
 
 func _on_trigger_entered(id : String, pos : Vector2):
 	var dialogues = read_json(str("res://Utility/Dialogues/", id, ".json"))
 	print(str(id, " triggered at ", pos))
-	var t = text_box.instantiate()
-	add_child(t)
+	var tbox = text_box.instantiate()
+	add_child(tbox)
+	tbox.dialogue_flag.connect(_on_dialogue_flag)
 	
-	await t.start(pos, id, dialogues[day])
+	tbox.start(pos, id, dialogues, context.front())
+	await tbox.tree_exited
+	
+func _on_dialogue_flag(flag_context) -> void:
+	print(str("dialogue flag activated: ", flag_context))
 
 func update(tile_code : String):
 	for n in get_children():
@@ -57,3 +63,7 @@ func _on_player_update_map(index: Array) -> void:
 	print(str("map index ", tile_index))
 	var tile_row = tilemap[tile_index[0]]
 	update(tile_row[tile_index[1]])
+	
+func add_dialogue_context(new_context : String):
+	context.push_front(new_context)
+	print(str("Context Stack Updated: ", context))

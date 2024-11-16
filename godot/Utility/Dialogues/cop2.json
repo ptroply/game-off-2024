@@ -1,6 +1,6 @@
-
-[
-    [
-        "You're looking for the chief? I last saw him hanging out in the second jail cell."
+{
+    "default": [
+        "You're looking for the Chief? I last saw him hanging out in the second jail cell.",
+        "Not the other jail cell, that guy in there is creepy. I wouldn't trust him if I were you."
     ]
-]
+}

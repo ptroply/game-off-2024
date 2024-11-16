@@ -1,5 +1,18 @@
-[
-    [
-        "Help, I'm stuck in here!"
+{
+    "default":     [
+        "Help, I'm stuck in here!",
+        "Find the JAIL KEYS and get me out!",
+        {
+            "note chief": "CHIEF location noted"
+        }
+    ],
+    "jail keys": [
+        "Get me out of here!",
+        {
+            "choice": {
+                "use jail keys": "Thanks for helping me out. You're a real top cop.",
+                "leave": "I'll never forgive you for this!"    
+            }
+        }
     ]
-]
+}
