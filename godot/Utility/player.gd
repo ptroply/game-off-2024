@@ -8,7 +8,6 @@ var flip : bool
 var tile_index : Array = [0,0]
 signal update_map(index : Array)
 
-
 func _physics_process(delta):
 		input_direction = Vector2.ZERO
 		
@@ -57,3 +56,4 @@ func _physics_process(delta):
 
 func animate_state():
 	sprite.play(walk_state)
+
