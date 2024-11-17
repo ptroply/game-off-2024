@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://fttcw2p5qk6s"]
+
+[ext_resource type="PackedScene" uid="uid://otnqhctjnnpk" path="res://field_map.tscn" id="1_wt567"]
+
+[node name="GameBase" type="Node2D"]
+
+[node name="FieldMap" parent="." instance=ExtResource("1_wt567")]

@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="Game Off 2024"
-run/main_scene="res://prototype0/MapDemo.tscn"
+run/main_scene="res://Scenes/game_base.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://boot-image.png"
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=5000
 
 [display]
 
