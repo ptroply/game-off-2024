@@ -37,7 +37,6 @@ func _physics_process(delta):
 			
 		animate_state()
 		
-		var current : Array = tile_index
 		var p = position
 		if p.x > 230:
 			position.x = 20

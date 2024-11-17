@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv6iwunrv675e"]
+
+[ext_resource type="PackedScene" uid="uid://xv86of0tjvbt" path="res://Scenes/breakroom.tscn" id="1_lmkaa"]
+[ext_resource type="PackedScene" uid="uid://c674ate2137xm" path="res://Scenes/offices.tscn" id="2_c6ptd"]
+[ext_resource type="PackedScene" uid="uid://bttbkpovwwski" path="res://Scenes/jail.tscn" id="3_y3k6y"]
+[ext_resource type="PackedScene" uid="uid://isv03seeiutq" path="res://Scenes/lobby.tscn" id="4_a03jf"]
+
+[node name="StationMap" type="Node2D"]
+
+[node name="Breakroom" parent="." instance=ExtResource("1_lmkaa")]
+
+[node name="Offices" parent="." instance=ExtResource("2_c6ptd")]
+position = Vector2(0, 160)
+
+[node name="Jail" parent="." instance=ExtResource("3_y3k6y")]
+position = Vector2(240, 0)
+
+[node name="Lobby" parent="." instance=ExtResource("4_a03jf")]
+position = Vector2(240, 160)
