@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://mydvi71ctbbk"]
+
+[ext_resource type="Script" path="res://Utility/ims/item.gd" id="1_4pmj8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j64y3"]
+bg_color = Color(0.941176, 0.054902, 0.054902, 1)
+
+[node name="Item" type="Button"]
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_j64y3")
+flat = true
+script = ExtResource("1_4pmj8")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

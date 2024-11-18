@@ -3,23 +3,23 @@
         "Help, I'm stuck in here!",
         "Find the JAIL KEYS and get me out!",
         {
-            "police chief": "Noted: The Police Chief is locked in the jail cell."
+            "chief": "Noted: The Police Chief is locked in the jail cell."
         }
     ],
-    "get jail keys": [
+    "jail key": [
         "Let me out of here!",
         {
-            "use jail keys chief": "Thanks for helping me out. You're a real top cop.",
+            "use jail key chief": "Thanks for helping me out. You're a real top cop.",
             "leave": "I'll never forgive you for this!"
         }
     ],
-    "police chief": [
+    "chief": [
         "What are you waiting for? Find the JAIL KEYS and get me out of here!"
     ],
-    "use jail keys stinky": [
+    "use jail key stinky": [
         "That guy you set free is dangerous. You're a menace!"
     ],
-    "use jail keys chief": [
+    "use jail key chief": [
         "Thank you for unlocking the door. I'll rest here for a moment..."
     ]
 }

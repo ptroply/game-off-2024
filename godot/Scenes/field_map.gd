@@ -1,7 +1,8 @@
 extends Node2D
 
 var day = 0
-var context = ["default"]
+var context : Array = ["coffee"]
+var tbox
 
 var tilemap : Array = [["breakroom","jail",0],
 ["offices","lobby",0],
@@ -9,7 +10,8 @@ var tilemap : Array = [["breakroom","jail",0],
 
 var tile_index : Array = [0,0]
 
-var text_box = load("res://Utility/UserInterface/text_box.tscn")
+var text_box = load("res://Utility/UserInterface/dialogue_box.tscn")
+var inventory_menu = load("res://Utility/ims/inventory.tscn")
 
 func read_json(file_path) -> Dictionary:
 	var file = FileAccess.open(file_path, FileAccess.READ)
@@ -17,13 +19,29 @@ func read_json(file_path) -> Dictionary:
 	var finish = JSON.parse_string(content)
 	return finish
 
-
 #func start(tiles : Array):
 	#tilemap = tiles
 	#for i in range(tilemap.size()):
 		#for n in range(tilemap[i].size()):
 			#if tilemap[i][n].begins_with("start_"):
 				#tile_index = [i, n]
+				
+func _process(_delta):
+	if Input.is_action_just_released("ui_inventory"):
+		var im = inventory_menu.instantiate()
+		im.start(context)
+		add_child(im)
+	
+	#if Input.is_action_just_released("ui_accept"):
+		#if tbox != null:
+			#if tbox.lines_skipped < tbox.get_line_count() - 3:
+				#tbox.lines_skipped += 3
+			#elif tbox.pop_up:
+				#tbox.pop_up = false
+			#else:
+				#get_tree().paused = false
+				#queue_free()
+
 
 func _ready() -> void:
 	load_tile(tilemap[tile_index[0]][tile_index[1]])
@@ -42,11 +60,14 @@ func load_tile(tile_code : String):
 func _on_trigger_entered(id : String, pos : Vector2):
 	var dialogues = read_json(str("res://Dialogues/", id, ".json"))
 	print(str(id, " triggered at ", pos))
-	var tbox = text_box.instantiate()
+	tbox = text_box.instantiate()
 	add_child(tbox)
 	tbox.dialogue_flag.connect(_on_dialogue_flag)
 	
-	tbox.start(pos, id, dialogues, context)
+	if context.is_empty():
+		tbox.start(pos,id,dialogues,["default"])
+	else:
+		tbox.start(pos, id, dialogues, context)
 	await tbox.tree_exited
 	
 func _on_dialogue_flag(flag_context) -> void:
@@ -67,8 +88,6 @@ func _on_player_update_map(index: Array) -> void:
 	update(tile_row[tile_index[1]])
 	
 func add_context_flag(new_context : String):
-	if new_context == "retry":
-		get_parent().get_tree().reload_current_scene()
 
 	context.push_front(new_context)
 	print(str("Context Stack Updated: ", context))

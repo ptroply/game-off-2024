@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm1u77pha7htq"]
+
+[ext_resource type="Script" path="res://Utility/UserInterface/dialogue_box.gd" id="1_h43nf"]
+[ext_resource type="FontFile" uid="uid://bi1g3eepf86as" path="res://Utility/UserInterface/m5_7.tres" id="2_mlpae"]
+[ext_resource type="StyleBox" uid="uid://b1mwa80k2bkkx" path="res://Utility/UserInterface/dialogue_style_box.tres" id="3_bupsw"]
+
+[node name="DialogueBox" type="Node2D"]
+process_mode = 2
+position = Vector2(16, 112)
+script = ExtResource("1_h43nf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_right = 224.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_mlpae")
+theme_override_styles/normal = ExtResource("3_bupsw")
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, 24)

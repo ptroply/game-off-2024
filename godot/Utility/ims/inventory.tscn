@@ -1,23 +1,21 @@
-[gd_scene format=3 uid="uid://btwh7j4lwswuq"]
+[gd_scene load_steps=2 format=3 uid="uid://btwh7j4lwswuq"]
 
-[node name="Inventory" type="Node"]
+[ext_resource type="Script" path="res://Utility/ims/inventory.gd" id="1_u7bjl"]
 
-[node name="Control" type="Control" parent="."]
+[node name="Inventory" type="Control"]
+process_mode = 2
+top_level = true
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+script = ExtResource("1_u7bjl")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label3" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2

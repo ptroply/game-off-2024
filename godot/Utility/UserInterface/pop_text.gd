@@ -10,6 +10,7 @@ func start(context_dict : Dictionary):
 
 
 func _on_pop_btn_up(value : int):
+	print(str(context.keys()[value], context.get(context.keys()[value])))
 	flag_out.emit(context.keys()[value], context.get(context.keys()[value]))
 	queue_free()
 

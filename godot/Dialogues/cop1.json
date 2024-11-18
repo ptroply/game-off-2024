@@ -3,19 +3,19 @@
         "Thanks for coming all the way out here, Agent. We're in a pickle right now.",
         "Search the building and help me find the Chief."
     ],
-    "police chief": [
-        "Chief is locked in the jail cell? Here's the JAIL KEYS...",
+    "chief": [
+        "Chief is locked in the jail cell? Here's the JAIL KEY...",
         {
-            "get jail keys": "Got the JAIL KEYS"
+            "jail key": "Got the JAIL KEY"
         }
     ],
-    "get jail keys": [
+    "jail key": [
         "This has to be the third time the Chief's got stuck in there this year..."
     ],
-    "use jail keys chief": [
+    "use jail key chief": [
         "Thanks a lot for your help today. I don't know what we'd have done without you."
     ],
-    "use jail keys stinky": [
+    "use jail key stinky": [
         "Why did you free the suspect in cell 1? I trust your judgement, but your methods are unorthodox."
     ]
 }

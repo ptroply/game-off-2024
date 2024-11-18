@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://otnqhctjnnpk"]
 
-[ext_resource type="Script" path="res://Scenes/FieldMap.gd" id="1_6doou"]
+[ext_resource type="Script" path="res://Scenes/field_map.gd" id="1_6doou"]
 [ext_resource type="PackedScene" uid="uid://cx4lvocyh1oua" path="res://Utility/player.tscn" id="2_psdff"]
 
 [node name="FieldMap" type="Node2D"]

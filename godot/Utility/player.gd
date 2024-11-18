@@ -56,4 +56,3 @@ func _physics_process(delta):
 
 func animate_state():
 	sprite.play(walk_state)
-

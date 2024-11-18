@@ -3,16 +3,16 @@
         "You're looking for the Chief? I last saw him hanging out in the second jail cell.",
         "Not the other jail cell, that guy in there is creepy. I wouldn't trust him if I were you."
     ],
-    "police chief": [
-        "We need to find the JAIL KEYS!"
+    "chief": [
+        "We need to find the JAIL KEY!"
     ],
-    "get jail keys": [
-        "Quick, help the Chief!"
+    "jail key": [
+        "You have the JAIL KEY now. Check your inventory by pressing SHIFT on the keyboard."
     ],
-    "use jail keys chief": [
+    "use jail key chief": [
         "Way to go solving that mystery!"
     ],
-    "use jail keys stinky": [
+    "use jail key stinky": [
         "It's fun to cause a little bit of chaos, isn't it?"
     ]
 }
