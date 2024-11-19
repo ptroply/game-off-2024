@@ -3,6 +3,7 @@ extends Node2D
 var day = 0
 var context : Array = ["coffee"]
 var tbox
+var ItemBookSystem = load("res://Utility/InfoBookSystem/info_book_system.tscn")
 
 var tilemap : Array = [["breakroom","jail",0],
 ["offices","lobby",0],
@@ -13,11 +14,11 @@ var tile_index : Array = [0,0]
 var text_box = load("res://Utility/UserInterface/dialogue_box.tscn")
 var inventory_menu = load("res://Utility/ims/inventory.tscn")
 
-func read_json(file_path) -> Dictionary:
-	var file = FileAccess.open(file_path, FileAccess.READ)
-	var content = file.get_as_text()
-	var finish = JSON.parse_string(content)
-	return finish
+#func read_json(file_path) -> Dictionary:
+	#var file = FileAccess.open(file_path, FileAccess.READ)
+	#var content = file.get_as_text()
+	#var finish = JSON.parse_string(content)
+	#return finish
 
 #func start(tiles : Array):
 	#tilemap = tiles
@@ -58,7 +59,7 @@ func load_tile(tile_code : String):
 		trig.trigger_entered.connect(_on_trigger_entered)
 
 func _on_trigger_entered(id : String, pos : Vector2):
-	var dialogues = read_json(str("res://Dialogues/", id, ".json"))
+	var dialogues = get_node("/root/DataManager").read_json(str("res://Dialogues/", id, ".json"))
 	print(str(id, " triggered at ", pos))
 	tbox = text_box.instantiate()
 	add_child(tbox)
@@ -71,7 +72,11 @@ func _on_trigger_entered(id : String, pos : Vector2):
 	await tbox.tree_exited
 	
 func _on_dialogue_flag(flag_context) -> void:
-	add_context_flag(flag_context)
+	if flag_context == "enter code":
+		var ibs = ItemBookSystem.instantiate()
+		add_child(ibs)
+	elif flag_context not in context:
+		add_context_flag(flag_context)
 
 func update(tile_code : String):
 	for n in get_children():

@@ -9,6 +9,7 @@ func _ready() -> void:
 	#if FileAccess.file_exists(sprite_filepath):
 	$CharacterSprite.sprite_frames = load(sprite_filepath)
 	#else: set some error sprite
+	$CharacterSprite.play("default")
 
 
 func _on_body_entered(body: Node2D) -> void:

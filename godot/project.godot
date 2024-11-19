@@ -20,8 +20,8 @@ boot_splash/minimum_display_time=5000
 
 [autoload]
 
-MusicBox="*res://Utility/music_box.gd"
 DataManager="*res://Utility/data_manager.gd"
+MusicBox="*res://Utility/music_box.tscn"
 
 [display]
 

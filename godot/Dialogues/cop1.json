@@ -6,14 +6,20 @@
     "chief": [
         "Chief is locked in the jail cell? Here's the JAIL KEY...",
         {
-            "jail key": "Got the JAIL KEY"
+            "jail key": "Got the JAIL KEY. It's a master key that unlocks every jail cell in the station."
         }
     ],
     "jail key": [
         "This has to be the third time the Chief's got stuck in there this year..."
     ],
     "use jail key chief": [
-        "Thanks a lot for your help today. I don't know what we'd have done without you."
+        "Got Chief out? You should go talk to him to see the Info Book System.",
+        {
+            "info book system": "We use the IBS terminal in the jail to track our case files."
+        }
+    ],
+    "info book system": [
+        "We prefer to call it the Info Book System at the station, rather than IBS..."
     ],
     "use jail key stinky": [
         "Why did you free the suspect in cell 1? I trust your judgement, but your methods are unorthodox."

@@ -1,0 +1,32 @@
+{
+    "default": [
+        "Info Book System - ACCESS DENIED",
+        "Please present a valid IBS Card..."
+    ],
+    "ibs card": [
+        "Info Book System - ACCESS GRANTED",
+        {
+            "enter code": "LOADING...",
+            "leave": "LOGGING OFF..."
+        }
+    ],
+    "database": {
+        "A123": [
+            "Loading A123...",
+            "Carjacking on Main Street, suspect in custody but missing weapon reported by witness.",
+            "No progress in questioning. Deputy's note: The Police Chief has got himself locked in cell 2 AGAIN",
+            "Chief overheard the suspect talking from the other side of the wall!",
+            "They gave up where they stashed the weapon. Eavesdropping is excellent! Case Closed.",
+            "... END OF RECORD"
+        ],
+        "B421": [
+            "Loading B421...",
+            "Unhoused individual who goes by the name Stinky was apprehended behind Deli Delicious restaurant.",
+            "Search found drugs and paraphernalia, and a weapon (pocket knife).",
+            "Restaurant employee James was captured fleeing the scene, but was released shortly after...",
+            "Deli Delicious owner Jonathan gave alibi to James as he had clocked out late and was rushing home.",
+            "Determined that James is cleared of suspicion, Stinky released on bond for court hearing. Case Closed.",
+            "... END OF RECORD"
+        ]
+    }
+}

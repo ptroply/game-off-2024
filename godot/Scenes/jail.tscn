@@ -14,3 +14,7 @@ id = "chief"
 [node name="MapActor2" parent="." instance=ExtResource("2_t82a8")]
 position = Vector2(59, 35)
 id = "stinky"
+
+[node name="MapActor3" parent="." instance=ExtResource("2_t82a8")]
+position = Vector2(84, 109)
+id = "ibs"

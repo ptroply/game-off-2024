@@ -11,5 +11,16 @@
     ],
     "use jail key stinky": [
         "Err... Give me a minute, my leg fell asleep."
+    ],
+    "stinky drugs": [
+        "I was just minding my own business behind the Deli Delicious. Nothing untoward about it...",
+        {
+            "james a421": "Cool. You've done your research, why don't you ask him yourself?"
+        }
+    ],
+    "james a421": [
+        "I have nothing left to say to you. Except one thing: All Cops Are Buttheads.",
+        "The Chief is a butthead, and all his little piggies are little buttheads.",
+        "...but YOU have the biggest butt of them all, and it's right where you're head should be at."
     ]
 }
