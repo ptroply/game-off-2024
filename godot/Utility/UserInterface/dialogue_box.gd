@@ -16,8 +16,6 @@ func start(target_position : Vector2, id : String, dialogues : Dictionary, conte
 	print(str("context stack: ", contexts))
 	var context_dialogue : Array
 	
-	##update to look at the context stack, not just the last one
-	
 	for i in range(contexts.size()):
 		if contexts[i] in dialogues:
 			context_dialogue = dialogues[contexts[i]]

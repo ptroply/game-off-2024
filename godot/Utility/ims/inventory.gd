@@ -1,20 +1,26 @@
 extends Control
 
-var item_dict : Dictionary
-@onready var items : Array
-var item_btn = load("res://Utility/ims/item.tscn")
-var item_textbox = load("res://Utility/ims/info_box.tscn")
+var player_has : Dictionary
+var all_items : Dictionary
+var ItemBtn = load("res://Utility/ims/item.tscn")
+var InfoBox = load("res://Utility/ims/info_box.tscn")
+var item_info_box
 var database_path = "res://items.json"
 
-func start(items_array : Array):
-	items = items_array
+
+func start(player_items : Dictionary, items_dict : Dictionary):
+	player_has = player_items
+	all_items = items_dict
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	item_dict = get_node("/root/DataManager").read_json("res://items.json")
-	for id : String in items:
-		if item_dict.has(id):
-			var menu_item = item_btn.instantiate()
+	get_tree().paused = true
+	#item_dict = get_node("/root/DataManager").read_json("res://items.json")
+	for id in player_has.keys():
+		if player_has.get(id) == true:
+			
+		#if items.has(id):
+			var menu_item = ItemBtn.instantiate()
 			var item_texture = load(str("res://Sprites/Items/", id, ".png"))
 			menu_item.start(id, item_texture)
 			menu_item.btn_select.connect(_on_btn_select)
@@ -24,11 +30,10 @@ func _ready() -> void:
 	$HBoxContainer.set_size(Vector2.ZERO)
 	var first = $HBoxContainer.get_children().front()
 	
-	var it = await item_textbox.instantiate()
-	add_child(it)
-	it.set_text(first.flag_id)
+	item_info_box = InfoBox.instantiate()
+	add_child(item_info_box)
+	item_info_box.set_text(first.flag_id)
 	first.grab_focus()
-	get_tree().paused = true
 
 func _process(_delta):
 	if Input.is_action_just_released("ui_inventory"):
@@ -37,10 +42,12 @@ func _process(_delta):
 
 ## when the item is selected, display description text
 func _on_btn_select(flag_id : String):
-	
-	var desc_text = item_dict.get(flag_id)
+	#var item_info_box = await info_box.instantiate()
+	#add_child(item_info_box)
+
+	var desc_text = all_items.get(flag_id)
 	print(str(flag_id, ": ", desc_text))
-	get_node("InfoBox").set_text(desc_text)
+	item_info_box.set_text(desc_text)
 
 ## when the item is in focus, display the item name
 func _on_btn_focus(flag_id : String):

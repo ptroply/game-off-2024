@@ -17,38 +17,75 @@ func _ready() -> void:
 		btn.ibs_btn_up.connect(_on_ibs_btn_up)
 	$GridContainer.get_children().front().grab_focus()
 
-func _on_ibs_btn_up(id : String):
-	if id.matchn("enter"):
-		if $CodeBox.text.length() == 4:
-			var case_id : String = $CodeBox.text
-			print(str("searching ", case_id))
-			var ibox = info_box.instantiate()
-			add_child(ibox)
-			if info_dict.has(case_id):
-				print("FOUND")
-				if !info_id_match.has(case_id):
-					info_id_match.push_front(case_id)
-				ibox.start(case_id, info_dict.get(case_id))
-				ibox.tree_exited.connect(_on_ibox_closed)
-				for c in $GridContainer.get_children():
-					c.set_focus_mode(0)
+func search_code_input():
+	var case_id : String = $CodeBox.text
+	print(str("searching ", case_id))
+	var ibox = info_box.instantiate()
+	add_child(ibox)
+	if info_dict.has(case_id):
+		print("FOUND")
+		if !info_id_match.has(case_id):
+			info_id_match.push_front(case_id)
+		ibox.start(case_id, info_dict.get(case_id))
+		ibox.tree_exited.connect(_on_ibox_closed)
+		for c in $GridContainer.get_children():
+			c.set_focus_mode(0)
+	else:
+		ibox.start("404", ["CASE FILE NOT FOUND"])
+		ibox.tree_exited.connect(_on_ibox_closed)
+		for c in $GridContainer.get_children():
+			c.set_focus_mode(0)
+
+
+func _on_ibs_btn_up(btn_id : String):
+	match btn_id:
+		"enter":
+			if $CodeBox.text.length() != 4:
+				print(str("Invalid entry: Must be 4 characters. Current: ", $CodeBox.text.length()))
+				return
 			else:
-				ibox.start("404", ["CASE FILE NOT FOUND"])
-				ibox.tree_exited.connect(_on_ibox_closed)
-				for c in $GridContainer.get_children():
-					c.set_focus_mode(0)
-		return
-	if id.matchn("clear"):
-		$CodeBox.text = ""
-		return
-	if id.matchn("exit"):
-		get_info_ids.emit(info_id_match)
-		print(str("signal ", info_id_match))
-		queue_free()
-		get_tree().paused = false
-		return
-	if $CodeBox.text.length() < 4:
-		$CodeBox.text += id
+				search_code_input()
+		"clear":
+			$CodeBox.text = ""
+		"exit":
+			get_info_ids.emit(info_id_match)
+			print(str("signal ", info_id_match))
+			get_tree().paused = false
+			queue_free()
+		"_":
+			if $CodeBox.text.length() < 4:
+				$CodeBox.text += btn_id
+
+
+	#if btn_id.matchn("enter"):
+		#if $CodeBox.text.length() == 4:
+			#var case_id : String = $CodeBox.text
+			#print(str("searching ", case_id))
+			#var ibox = info_box.instantiate()
+			#add_child(ibox)
+			#if info_dict.has(case_id):
+				#print("FOUND")
+				#if !info_id_match.has(case_id):
+					#info_id_match.push_front(case_id)
+				#ibox.start(case_id, info_dict.get(case_id))
+				#ibox.tree_exited.connect(_on_ibox_closed)
+				#for c in $GridContainer.get_children():
+					#c.set_focus_mode(0)
+			#else:
+				#ibox.start("404", ["CASE FILE NOT FOUND"])
+				#ibox.tree_exited.connect(_on_ibox_closed)
+				#for c in $GridContainer.get_children():
+					#c.set_focus_mode(0)
+		#return
+	#if btn_id.matchn("clear"):
+		#$CodeBox.text = ""
+		#return
+	#if btn_id.matchn("exit"):
+		#get_info_ids.emit(info_id_match)
+		#print(str("signal ", info_id_match))
+		#queue_free()
+		#get_tree().paused = false
+		#return
 
 func _on_ibox_closed():
 	for c in $GridContainer.get_children():

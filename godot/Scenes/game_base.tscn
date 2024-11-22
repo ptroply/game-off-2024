@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://fttcw2p5qk6s"]
+[gd_scene load_steps=3 format=3 uid="uid://fttcw2p5qk6s"]
 
+[ext_resource type="Script" path="res://Scenes/game_base.gd" id="1_qjf6h"]
 [ext_resource type="PackedScene" uid="uid://otnqhctjnnpk" path="res://Scenes/field_map.tscn" id="1_wt567"]
 
 [node name="GameBase" type="Node2D"]
+script = ExtResource("1_qjf6h")
 
 [node name="FieldMap" parent="." instance=ExtResource("1_wt567")]
+
+[connection signal="ibs" from="FieldMap" to="." method="_on_field_map_ibs"]
+[connection signal="try_add_inventory" from="FieldMap" to="." method="_on_field_map_try_add_inventory"]
