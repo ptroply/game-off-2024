@@ -3,7 +3,7 @@ extends Node2D
 var day = 0
 var tbox
 var InfoBookSystem = load("res://Utility/InfoBookSystem/info_book_system.tscn")
-var InventoryMenu = load("res://Utility/ims/inventory.tscn")
+var InventoryMenu = load("res://Utility/ItemMenu/inventory.tscn")
 @onready var item_dict : Dictionary = get_node("/root/DataManager").read_json("res://items.json")
 
 var items : Dictionary

@@ -1,7 +1,7 @@
 extends Control
 
 var info_dict : Dictionary
-var InfoBox = load("res://Utility/ims/info_box.tscn")
+var InfoBox = load("res://Utility/ItemMenu/info_box.tscn")
 var info_id_match : Array
 signal get_info_ids(ids : Array)
 

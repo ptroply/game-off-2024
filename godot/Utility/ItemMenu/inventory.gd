@@ -2,8 +2,8 @@ extends Control
 
 var player_has : Dictionary
 var all_items : Dictionary
-var ItemBtn = load("res://Utility/ims/item.tscn")
-var InfoBox = load("res://Utility/ims/info_box.tscn")
+var ItemBtn = load("res://Utility/ItemMenu/item.tscn")
+var InfoBox = load("res://Utility/ItemMenu/info_box.tscn")
 #var item_info_box
 var database_path = "res://items.json"
 
