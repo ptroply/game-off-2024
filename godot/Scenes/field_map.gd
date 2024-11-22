@@ -34,17 +34,27 @@ func _on_trigger_entered(id : String, pos : Vector2):
 	dbox = DialogueBox.instantiate()
 	add_child(dbox)
 	dbox.dialogue_flag.connect(_on_dialogue_flag)
+	dbox.tree_exited.connect(_on_dbox_closed)
 	
 	if context.is_empty():
 		dbox.start(pos,id,dialogues,["default"])
 	else:
 		dbox.start(pos, id, dialogues, context)
+	
+	get_tree().paused = true
+
+func _on_dbox_closed():
+	get_tree().paused = false
 
 func _on_dialogue_flag(flag_context) -> void:
 	if flag_context == "enter code":
+		dbox.lock = true
 		ibs.emit()
 	elif flag_context not in context:
 		add_context_flag(flag_context)
+		
+func delete_dbox():
+	dbox.queue_free()
 
 func update(tile_code : String):
 	for n in get_children():

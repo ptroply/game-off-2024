@@ -7,9 +7,5 @@ signal ibs_btn_up(btn_id : String)
 func _ready() -> void:
 	id = text
 
-
-
-
-
 func _on_button_up() -> void:
 	ibs_btn_up.emit(id)

@@ -1,14 +1,12 @@
 extends Control
 
 var info_dict : Dictionary
-var info_box = load("res://Utility/ims/info_box.tscn")
+var InfoBox = load("res://Utility/ims/info_box.tscn")
 var info_id_match : Array
 signal get_info_ids(ids : Array)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().paused = true
-	
 	var ibs_json = get_node("/root/DataManager").read_json("res://Utility/InfoBookSystem/ibs.json")
 	info_dict = ibs_json.database
 	
@@ -20,7 +18,7 @@ func _ready() -> void:
 func search_code_input():
 	var case_id : String = $CodeBox.text
 	print(str("searching ", case_id))
-	var ibox = info_box.instantiate()
+	var ibox = InfoBox.instantiate()
 	add_child(ibox)
 	if info_dict.has(case_id):
 		print("FOUND")
@@ -31,14 +29,14 @@ func search_code_input():
 		for c in $GridContainer.get_children():
 			c.set_focus_mode(0)
 	else:
-		ibox.start("404", ["CASE FILE NOT FOUND"])
+		ibox.start("", ["CASE FILE NOT FOUND"])
 		ibox.tree_exited.connect(_on_ibox_closed)
 		for c in $GridContainer.get_children():
 			c.set_focus_mode(0)
 
 
 func _on_ibs_btn_up(btn_id : String):
-	match btn_id:
+	match btn_id.to_lower():
 		"enter":
 			if $CodeBox.text.length() != 4:
 				print(str("Invalid entry: Must be 4 characters. Current: ", $CodeBox.text.length()))
@@ -50,9 +48,8 @@ func _on_ibs_btn_up(btn_id : String):
 		"exit":
 			get_info_ids.emit(info_id_match)
 			print(str("signal ", info_id_match))
-			get_tree().paused = false
 			queue_free()
-		"_":
+		_:
 			if $CodeBox.text.length() < 4:
 				$CodeBox.text += btn_id
 

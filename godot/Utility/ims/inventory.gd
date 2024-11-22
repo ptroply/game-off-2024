@@ -4,7 +4,7 @@ var player_has : Dictionary
 var all_items : Dictionary
 var ItemBtn = load("res://Utility/ims/item.tscn")
 var InfoBox = load("res://Utility/ims/info_box.tscn")
-var item_info_box
+#var item_info_box
 var database_path = "res://items.json"
 
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 	$HBoxContainer.set_size(Vector2.ZERO)
 	var first = $HBoxContainer.get_children().front()
 	
-	item_info_box = InfoBox.instantiate()
+	var item_info_box = InfoBox.instantiate()
 	add_child(item_info_box)
 	item_info_box.set_text(first.flag_id)
 	first.grab_focus()
@@ -42,8 +42,8 @@ func _process(_delta):
 
 ## when the item is selected, display description text
 func _on_btn_select(flag_id : String):
-	#var item_info_box = await info_box.instantiate()
-	#add_child(item_info_box)
+	var item_info_box = await InfoBox.instantiate()
+	add_child(item_info_box)
 
 	var desc_text = all_items.get(flag_id)
 	print(str(flag_id, ": ", desc_text))

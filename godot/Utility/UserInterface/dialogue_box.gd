@@ -8,6 +8,7 @@ var pop_up : bool
 var portrait : Texture2D
 signal restart
 @onready var label = $Label
+var lock : bool
 
 func set_text(value : String):
 	label.text = value
@@ -43,8 +44,6 @@ func start(target_position : Vector2, id : String, dialogues : Dictionary, conte
 	
 	set_portrait(portrait)
 	
-	get_tree().paused = true
-	
 func set_portrait(portrait_texture: Texture2D):
 	if portrait_texture == null:
 		style.content_margin_left = 8
@@ -61,11 +60,10 @@ func _on_flag_out(flag, context):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_released("ui_accept"):
+	if Input.is_action_just_released("ui_accept") and !lock:
 		if label.lines_skipped < label.get_line_count() - 3:
 			label.lines_skipped += 3
 		elif pop_up:
 			pop_up = false
 		else:
-			get_tree().paused = false
 			queue_free()

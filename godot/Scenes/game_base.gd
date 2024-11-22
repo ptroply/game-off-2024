@@ -26,7 +26,12 @@ func _process(delta: float) -> void:
 func _on_field_map_ibs() -> void:
 	var ibs = InfoBookSystem.instantiate()
 	add_child(ibs)
+	ibs.tree_exited.connect(_on_ibs_closed)
+	get_tree().paused = true
 
+func _on_ibs_closed():
+	$FieldMap.delete_dbox()
+	#get_tree().paused = false
 
 func _on_field_map_try_add_inventory(context_flag: String) -> void:
 	if context_flag in items.keys():
