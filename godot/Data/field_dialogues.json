@@ -1,0 +1,149 @@
+{
+    "stinky": {
+        "default": [
+            "Hey, I think you've got the wrong guy. Just let me out of here and we'll call it even, Okay?"
+        ],
+        "take jail key": [
+            "Whaddaya say? Give a guy a break and open the door?",
+            {
+                "info: stinky": "I didn't do anything wrong. These pigs are out to get me!",
+                "leave": "Beat it, Sherlock."
+            }
+        ],
+        "info: stinky": [
+            "Ask anyone who isn't a cop in this town. I'm a real stand-up guy outside the cage."
+        ],
+        "info: drug bust": [
+            "I was just minding my own business behind the Deli Delicious. Nothing untoward about it...",
+            {
+                "case a421": "Cool. You've done your research, why don't you ask Jim yourself?"
+            }
+        ],
+        "case a421": [
+            "Yeah, Jim was there. So you've done your research, why don't you ask him yourself? I've got nothing left to say to you.",
+            "Except one thing: All Cops Are Buttheads. The Chief is a butthead, and all his little piggies are little buttheads.",
+            "...but YOU have the biggest butt of them all, and it's right where you're head should be at."
+        ]
+    },
+    "chief": {
+        "default": [
+            "Help, I'm stuck in here!",
+            "Find the JAIL KEY and get me out!",
+            {
+                "info: chief": "Noted: The Police Chief is locked in the jail cell."
+            }
+        ],
+        "take jail key": [
+            "Let me out of here!",
+            {
+                "release chief": "Thanks for helping me out. You're a real top cop.",
+                "leave": "I'll never forgive you for this!"
+            }
+        ],
+        "info: chief": [
+            "What are you waiting for? Find the JAIL KEY and get me out of here!"
+        ],
+        "info: stinky": [
+            "That menace in cell 1 is dangerous! Don't listen to a word he says."
+        ],
+        "release chief": [
+            "Thank you for unlocking the door. I'll rest here for a moment..."
+        ],
+        "info: ibs": [
+            "Oh, right... you'll need this IBS CARD. Use it to access the console in this room.",
+            {
+                "take ibs card": "Got the IBS CARD. Use it to access the Info Book System in the police station."
+            }
+        ],
+        "take ibs card": [
+            "You'll need to remember each CODE, so write it down. Here's your first test. Try IBS CODE 'A123' at the terminal. You got that?"
+        ]
+    },
+    "gary": {
+        "default": [
+            "Thanks for coming all the way out here, Agent. We're in a pickle right now.",
+            "Search the building and help me find the Chief."
+        ],
+        "info: chief": [
+            "Chief is locked in the jail cell? Here's the JAIL KEY...",
+            {
+                "take jail key": "It's a master key that unlocks every jail cell in the station."
+            }
+        ],
+        "take jail key": [
+            "This has to be the third time the Chief's got stuck in there this year..."
+        ],
+        "release chief": [
+            "Got Chief out? You should go talk to him to see the Info Book System.",
+            {
+                "info: ibs": "We use the IBS terminal in the jail to track our case files."
+            }
+        ],
+        "info: ibs": [
+            "We prefer to call it the Info Book System at the station, rather than IBS..."
+        ]
+    },
+    "ash": {
+        "default": [
+            "You're looking for the Chief? I last saw him hanging out in the second jail cell.",
+            "Not the other jail cell, that guy in there is creepy. I wouldn't trust him if I were you."
+        ],
+        "info: chief": [
+            "We need to find the JAIL KEY!"
+        ],
+        "take jail key": [
+            "You have the JAIL KEY now. Check your inventory by pressing SHIFT on the keyboard."
+        ],
+        "release chief": [
+            "Have you heard about the Info Book System yet? You should talk to the Chief and get your IBS CARD"
+        ],
+        "info: stinky": [
+            "That guy in cell 2? He was brought in on skipping bail for a drug bust. I think the IBS CODE is 'B421'...",
+            "Or was it 'B412'?'"
+        ]
+    },
+    "ibs": {
+        "default": [
+            "Info Book System - ACCESS DENIED",
+            "Please present a valid IBS Card..."
+        ],
+        "take ibs card": [
+            "Info Book System - ACCESS GRANTED",
+            {
+                "enter code": "LOGGING OFF...",
+                "leave": "STANDING BY..."
+            }
+        ]
+    },
+    "coffee": {
+        "default": [
+            "It's a hot cup o' joe you bought at Rose Red's Drink-Inn.",
+            {
+                "take coffee": "You got your coffee. Press SHIFT to check your items."
+            }
+        ]
+    },
+    "empty jail cell": {
+        "default": [
+            "This cell is empty..."
+        ]
+    },
+    "roth": {
+        "default": [
+            "You managed to find this place so quickly. Or are you lost?",
+            "You can walk around with WASD or the Arrow Keys. Press the Spacebar to progress text and make menu selections.",
+            "Open and close the ITEM MENU by pressing Shift. In the menu, you can choose and select items to read their description.",
+            "I hope that helps you to get back on your feet, Agent. Good luck."
+        ],
+        "take jail key": [
+            "You might be tempted to release the strange man, but wouldn't that spoil the fun?"
+        ],
+        "take ibs card": [
+            "The Info Book System you have there is really a marvel of technology.",
+            "I've been given access to it myself so that I may aid you in your investigation."
+        ],
+        "case a123": [
+            "The Chief seems to have a bad habit of getting stuck in the jail cell. Why do you think that is?"
+        ]
+    }
+}

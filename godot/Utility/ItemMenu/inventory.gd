@@ -5,7 +5,7 @@ var all_items : Dictionary
 var ItemBtn = load("res://Utility/ItemMenu/item.tscn")
 var InfoBox = load("res://Utility/ItemMenu/info_box.tscn")
 #var item_info_box
-var database_path = "res://items.json"
+var database_path = "res://Data/items.json"
 
 
 func start(player_items : Dictionary, items_dict : Dictionary):

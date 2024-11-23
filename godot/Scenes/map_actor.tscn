@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2bsdptaoso2r"]
 
-[ext_resource type="Script" path="res://Utility/actor_trigger.gd" id="1_bbi2x"]
+[ext_resource type="Script" path="res://Scenes/map_actor.gd" id="1_bbi2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kqjmn"]
 radius = 8.0

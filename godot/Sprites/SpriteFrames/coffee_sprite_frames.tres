@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bpk8a4uvnimm7"]
+
+[ext_resource type="Texture2D" uid="uid://bdv6wobxvjtok" path="res://Sprites/SpriteFrames/coffee.png" id="1_nxvn2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wv03"]
+atlas = ExtResource("1_nxvn2")
+region = Rect2(0, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wv03")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]

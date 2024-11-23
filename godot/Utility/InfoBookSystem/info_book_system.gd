@@ -7,9 +7,7 @@ signal get_info_ids(ids : Array)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var ibs_json = get_node("/root/DataManager").read_json("res://Utility/InfoBookSystem/ibs.json")
-	info_dict = ibs_json.database
-	
+	info_dict = get_node("/root/DataManager").read_json("res://Data/ibs.json")
 	var buttons = $GridContainer.get_children()
 	for btn in buttons:
 		btn.ibs_btn_up.connect(_on_ibs_btn_up)

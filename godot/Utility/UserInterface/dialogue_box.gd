@@ -2,7 +2,7 @@ extends Node2D
 
 var style : StyleBoxFlat = preload("res://Utility/UserInterface/dialogue_style_box.tres")
 var is_top_screen : bool
-signal dialogue_flag(String)
+signal dialogue_flag(flag_key : String, flag_value : String)
 var pop_text = load("res://Utility/UserInterface/pop_text.tscn")
 var pop_up : bool
 var portrait : Texture2D
@@ -56,7 +56,7 @@ func set_portrait(portrait_texture: Texture2D):
 func _on_flag_out(flag, context):
 	pop_up = true
 	set_text(context)
-	dialogue_flag.emit(flag)
+	dialogue_flag.emit(flag, context)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

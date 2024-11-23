@@ -4,9 +4,11 @@ var day = 0
 var tbox
 var InfoBookSystem = load("res://Utility/InfoBookSystem/info_book_system.tscn")
 var InventoryMenu = load("res://Utility/ItemMenu/inventory.tscn")
-@onready var item_dict : Dictionary = get_node("/root/DataManager").read_json("res://items.json")
+@onready var item_dict : Dictionary = get_node("/root/DataManager").read_json("res://Data/items.json")
 
-var items : Dictionary
+var items : Dictionary = {
+	"notebook": true
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +35,9 @@ func _on_ibs_closed():
 	$FieldMap.delete_dbox()
 	#get_tree().paused = false
 
-func _on_field_map_try_add_inventory(context_flag: String) -> void:
+func _on_field_map_try_add_inventory(context_flag: String) -> void:	
 	if context_flag in items.keys():
 		items[context_flag] = true
 		print(str("got item: ", context_flag, " ", items.get(context_flag)))
+		
+		$FieldMap.remove_from_field(context_flag)

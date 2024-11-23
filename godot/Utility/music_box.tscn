@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxjhouh3e7hpq"]
 
-[ext_resource type="AudioStream" uid="uid://c2tjit8is3rb" path="res://Music/walking around clean.wav" id="1_lnotu"]
+[ext_resource type="AudioStream" uid="uid://grthtuyhjxk8" path="res://Music/walking around clean.wav" id="1_lnotu"]
 [ext_resource type="Script" path="res://Utility/music_box.gd" id="2_5pgpj"]
 
 [node name="MusicBox" type="AudioStreamPlayer"]
