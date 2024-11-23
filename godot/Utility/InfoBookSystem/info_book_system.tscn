@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://3b6wm4lm121s"]
+
+[ext_resource type="Script" path="res://Utility/InfoBookSystem/info_book_system.gd" id="1_kuwqf"]
+[ext_resource type="FontFile" uid="uid://bi1g3eepf86as" path="res://Utility/UserInterface/m5_7.tres" id="2_isl1w"]
+[ext_resource type="PackedScene" uid="uid://dois253tl8sqx" path="res://Utility/InfoBookSystem/ibs_btn.tscn" id="3_gan1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbjj8"]
+content_margin_left = 8.0
+bg_color = Color(1, 0.152941, 0, 1)
+expand_margin_bottom = 2.0
+
+[node name="InfoBookSystem" type="Control"]
+process_mode = 2
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kuwqf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
+
+[node name="CodeBox" type="Label" parent="."]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_isl1w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gbjj8")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 227.0
+offset_bottom = 99.0
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 8
+columns = 5
+
+[node name="IbsBtnA" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "A"
+
+[node name="IbsBtn1" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+
+[node name="IbsBtn2" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "2"
+
+[node name="IbsBtn3" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "3"
+
+[node name="IbsBtnEnter" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "ENTER"
+
+[node name="IbsBtnB" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "B"
+
+[node name="IbsBtn4" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "4"
+
+[node name="IbsBtn5" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "5"
+
+[node name="IbsBtn6" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "6"
+
+[node name="IbsBtnClear" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "CLEAR"
+
+[node name="IbsBtnC" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "C"
+
+[node name="IbsBtn7" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "7"
+
+[node name="IbsBtn8" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "8"
+
+[node name="IbsBtn9" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "9"
+
+[node name="IbsBtnExit" parent="GridContainer" instance=ExtResource("3_gan1n")]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="button_up" from="GridContainer/IbsBtnA" to="GridContainer/IbsBtnA" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn1" to="GridContainer/IbsBtn1" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn2" to="GridContainer/IbsBtn2" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn3" to="GridContainer/IbsBtn3" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtnEnter" to="GridContainer/IbsBtnEnter" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtnB" to="GridContainer/IbsBtnB" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn4" to="GridContainer/IbsBtn4" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn5" to="GridContainer/IbsBtn5" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn6" to="GridContainer/IbsBtn6" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtnClear" to="GridContainer/IbsBtnClear" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtnC" to="GridContainer/IbsBtnC" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn7" to="GridContainer/IbsBtn7" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn8" to="GridContainer/IbsBtn8" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtn9" to="GridContainer/IbsBtn9" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/IbsBtnExit" to="GridContainer/IbsBtnExit" method="_on_button_up"]

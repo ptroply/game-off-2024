@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://dois253tl8sqx"]
+
+[ext_resource type="FontFile" uid="uid://bi1g3eepf86as" path="res://Utility/UserInterface/m5_7.tres" id="1_mqjty"]
+[ext_resource type="StyleBox" uid="uid://babv5jkms2ksw" path="res://Utility/UserInterface/ibs_btn_hover_style_box.tres" id="2_exapp"]
+[ext_resource type="StyleBox" uid="uid://c6fuoiims8ldc" path="res://Utility/UserInterface/ibs_btn_style_box.tres" id="3_sf1f3"]
+[ext_resource type="Script" path="res://Utility/InfoBookSystem/ibs_btn.gd" id="4_lyv2k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuue8"]
+bg_color = Color(1, 0.152941, 0, 1)
+
+[node name="IbsBtn" type="Button"]
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("1_mqjty")
+theme_override_styles/focus = ExtResource("2_exapp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uuue8")
+theme_override_styles/normal = ExtResource("3_sf1f3")
+text = "1"
+script = ExtResource("4_lyv2k")
