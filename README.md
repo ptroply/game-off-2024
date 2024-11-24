@@ -1,4 +1,4 @@
-# Red Wire
+![Red Wire Title Screen](https://img.itch.zone/aW1nLzE4NzA0NzkzLnBuZw==/315x250%23c/K%2F3S%2B7.png "Red Wire")
 
 https://animal-village.itch.io/red-wire
 
