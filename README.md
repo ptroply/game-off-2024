@@ -1,4 +1,4 @@
-# [Red Wire](https://animal-village.itch.io/red-wire)
+# Red Wire
 
 https://animal-village.itch.io/red-wire
 
@@ -12,14 +12,14 @@ Made for [Game Off 2024](https://itch.io/jam/game-off-2024)
 > The enigmatic RED WIRE KILLER appears to have struck again! Authorities confirm that Quinn Myers, who was reported missing last week was found dead off Route 91 on Tuesday. The victim was burned in an apparent electrical fire...
 
 The news puts a sinking feeling in your chest. It's happening again. The details in the report remind you of the twisted case of Adrian Roth, the murderer who made your career when you put him behind bars. Roth was a prolific serial killer who confessed to over 50 murders across the midwest in a decades-spanning spree, but just over half of his confessed crimes have been tied to known missing persons and murder cases.<p>
-Much of Roth’s methodology and the locations of many of his victims’ remains are still a mystery to everybody, except for you. You feel the Red Wire pulling you back to That Place where you first found him. It couldn't be Roth, or could it? He's 71 years-old and behind bars in a maximum security prison. But so long as he can communicate with the outside world...<p>
+Much of Roth’s methodology and the locations of many of his victims’ remains are still a mystery to everybody, except for you. You feel the **Red Wire** pulling you back to where this all began. It couldn't be Roth, or could it? He's 71 years-old and behind bars in a maximum security prison. But so long as he can communicate with the outside world...<p>
 The rest of the team will get started in Denver, but you’ve decided to go ahead to Rose Ridge, Wyoming to investigate the latest murder. The police department isn’t returning your calls,  and something in your gut tells you the killer might still be close.<p>
 You arrive to check in at the Rose Ridge Drink-Inn in the evening. The desk clerk hands you a sealed envelope. Inside is a note:
->PER YOUR REQUEST - THE TELEPHONE IS HARDLINED TO INMATE’S CELL AT MSP. YOUR INVESTIGATION WILL END IN 3 DAYS. GOOD LUCK, AGENT.
+>PER YOUR REQUEST - THE TELEPHONE IS HARDLINED TO INMATE ADRIAN ROTH’S CELL AT MSP. YOUR INVESTIGATION WILL END IN 3 DAYS. GOOD LUCK, AGENT.
 
 ---
 
-### Animal Village presents 'Red Wire'
+**Red Wire** by Animal Village
 
 #### Programming
   - Matt Pietropaoli
