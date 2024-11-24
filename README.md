@@ -19,16 +19,18 @@ You arrive to check in at the Rose Ridge Drink-Inn in the evening. The desk cler
 
 ---
 
-**Red Wire** by Animal Village
+### Red Wire by Animal Village
 
 #### Programming
-  - Matt Pietropaoli
-  - Taylor Quas
+- Matt Pietropaoli
+- Taylor Quas
 #### Narrative
-  - Wren McGalliard
-  - Matt Pietropaoli
+- Wren McGalliard
+- Matt Pietropaoli
+#### Original Soundtrack & SFX
+- Wren McGalliard
 #### Main Character Sprite
-  - Chris Gessler
+- Chris Gessler
 #### Art Assets & Tools
 - [darkmoonfire pixel noir mystery icons](https://darkmoonfire.itch.io/pixel-noir-mystery-icons)
 - [0x72 2bit character generator](https://0x72.itch.io/2bitcharactergenerator)
