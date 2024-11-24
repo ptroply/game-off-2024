@@ -1,4 +1,4 @@
-# [~~RED WIRE~~](https://animal-village.itch.io/red-wire)
+# [RED WIRE](https://animal-village.itch.io/red-wire)
 Made for [Game Off 2024](https://itch.io/jam/game-off-2024)
 
 ### Controls
@@ -16,7 +16,7 @@ You arrive to check in at the Rose Ridge Drink-Inn in the evening. The desk cler
 
 ---
 
-### Animal Village presents ~~RED WIRE~~
+### Animal Village presents RED WIRE
 
 #### Programming
   - Matt Pietropaoli
