@@ -10,7 +10,7 @@ var flash : bool
 func _ready() -> void:
 	flash_timer = Timer.new()
 	add_child(flash_timer)
-	flash_timer.wait_time = 1
+	flash_timer.wait_time = .6
 	flash_timer.timeout.connect(_on_flash_timer_timeout)
 	flash_timer.start()
 	scroll_timer = Timer.new()
