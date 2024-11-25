@@ -16,7 +16,7 @@ func darken():
 
 func lighten():
 	if modulate.a < 1:
-		modulate.a += 0.2
+		modulate.a = 1
 
 func _physics_process(delta):
 		input_direction = Vector2.ZERO

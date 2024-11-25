@@ -43,17 +43,7 @@ theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_jr7no")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3g2io")
-text = "MISSING MAN DIED IN ELECTRIC FIRE \"The enigmatic RED WIRE KILLER appears to have struck again!\"
-
-It's happening again. The details in the report remind you of the twisted case of Adrian Roth, the murderer who made your career when you put him behind bars.
-
-Roth's methodology and the locations of many of his victims are still a mystery to everybody, except for you. You feel the red wire pulling you back to where this all began...
-
-You have gone ahead to Rose Ridge, Wyoming to investigate the latest murder. The police department is not returning your calls, and something in your gut tells you the killer might still be close.
-
-Apon arriving in the evening to check in at the Rose Ridge Drink-Inn, the desk clerk hands you a sealed envelope. Inside is a note...
-
-PER YOUR REQUEST - THE TELEPHONE IS HARDLINED TO INMATE ADRIAN ROTHS CELL AT MSP. YOUR INVESTIGATION WILL END IN 3 DAYS. GOOD LUCK, AGENT.
+text = "
 "
 autowrap_mode = 2
 

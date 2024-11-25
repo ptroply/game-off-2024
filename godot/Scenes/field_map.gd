@@ -82,6 +82,7 @@ func _on_player_update_map(index: Array) -> void:
 	if tile_index[0] > tilemap.size() - 1 or tile_index[0] < 0:
 		$Player.darken()
 		update("")
+		print("Player stray X axis")
 		return
 	
 	var tile_row : Array = tilemap[tile_index[0]]	
@@ -89,8 +90,10 @@ func _on_player_update_map(index: Array) -> void:
 	if tile_index[1] > tile_row.size() -1 or tile_index[1] < 0 :
 		$Player.darken()
 		update("")
+		print("Player stray Y axis")
 		return
 	
+	$Player.lighten()
 	update(tile_row[tile_index[1]])
 	
 func add_context_flag(new_context : String):
@@ -112,9 +115,10 @@ func _on_player_game_over() -> void:
 	dbox = DialogueBox.instantiate()
 	add_child(dbox)
 	dbox.tree_exited.connect(_on_gameover_dbox_closed)
-	dbox.start($Player.position, "gameover", {"default" : ["Straying too far, you are lost in this place. You can't find the killer, and it would appear you've become their next victim..."]}, context)
+	dbox.start($Player.position, "gameover", field_dialogues["gameover"], context)
 	get_tree().paused = true
 
 func _on_gameover_dbox_closed():
 	get_tree().paused = false
+	DataManager.credits_flag = true
 	get_tree().change_scene_to_packed(StartScreen)
