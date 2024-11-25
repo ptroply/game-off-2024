@@ -35,10 +35,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3g2io")
 text = "press SPACEBAR to start"
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="TitleScroll"]
-offset_top = 192.0
+[node name="Prelude" type="Label" parent="TitleScroll"]
+offset_top = 176.0
 offset_right = 240.0
-offset_bottom = 600.0
+offset_bottom = 584.0
 theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_jr7no")
@@ -59,9 +59,9 @@ autowrap_mode = 2
 
 [node name="Highlight" type="Label" parent="TitleScroll"]
 offset_left = 30.0
-offset_top = 348.0
+offset_top = 332.0
 offset_right = 74.0
-offset_bottom = 371.0
+offset_bottom = 355.0
 theme_override_colors/font_color = Color(0.941176, 0.054902, 0.054902, 1)
 theme_override_fonts/font = ExtResource("2_jr7no")
 text = "red wire"
@@ -70,3 +70,21 @@ text = "red wire"
 position = Vector2(0, 607)
 texture = ExtResource("1_o8qls")
 centered = false
+
+[node name="Label" type="Label" parent="TitleScroll"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 592.0
+offset_right = 248.0
+offset_bottom = 608.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_jr7no")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_3g2io")
+text = "Animal Village presents"
+horizontal_alignment = 1
+autowrap_mode = 2

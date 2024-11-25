@@ -6,7 +6,6 @@ signal dialogue_flag(flag_key : String, flag_value : String)
 var pop_text = load("res://Utility/UserInterface/pop_text.tscn")
 var pop_up : bool
 var portrait : Texture2D
-signal restart
 @onready var label = $Label
 var lock : bool
 

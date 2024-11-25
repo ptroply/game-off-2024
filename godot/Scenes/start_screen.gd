@@ -8,6 +8,7 @@ var flash : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicBox.set_music("red_walker")
 	flash_timer = Timer.new()
 	add_child(flash_timer)
 	flash_timer.wait_time = .6
@@ -34,8 +35,7 @@ func _on_scroll_timer_timeout():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print($TitleScroll/PressStart.get("theme_override_colors/font_color"))
-	if flash == true:
+	if flash == false:
 		$TitleScroll/PressStart.set("theme_override_colors/font_color", Color.WHITE)
 	else:
 		$TitleScroll/PressStart.set("theme_override_colors/font_color", Color.BLACK)
@@ -47,8 +47,9 @@ func _process(delta: float) -> void:
 	if $TitleScroll/Title2.global_position.y < -9:
 		$TitleScroll.set_position(Vector2(0,-8))
 		scroll = false
-		scroll_timer.wait_time = 8.0
+		scroll_timer.wait_time = 4
 		scroll_timer.start()
+		MusicBox.play()
 	if scroll:
 		$TitleScroll.move_local_y(-0.167, true)
 	

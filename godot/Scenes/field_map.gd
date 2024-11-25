@@ -1,10 +1,11 @@
 extends Node2D
 
+var StartScreen : PackedScene = load("res://Scenes/start_screen.tscn")
+
 var context : Array = []
 
-var tilemap : Array = [["breakroom","jail",0],
-["offices","lobby","hotel_room"],
-[0,0,0]]
+var tilemap : Array = [["breakroom","jail","wire1"],
+["offices","lobby","hotel_room"]]
 
 var tile_index : Array = [0,0]
 
@@ -17,12 +18,15 @@ signal try_add_inventory(context_flag : String)
 
 func _ready() -> void:
 	field_dialogues = get_node("/root/DataManager").read_json(str("res://Data/field_dialogues.json"))
+	print(tilemap[tile_index[0]][tile_index[1]])
 	load_tile(tilemap[tile_index[0]][tile_index[1]])
 	
 func load_tile(tile_code : String):
 	var path = str("res://Scenes/", tile_code,".tscn")
 	var new_map = load(path)
 	$Label.text = tile_code.capitalize()
+	if new_map == null:
+		return
 	var n = new_map.instantiate()
 	add_child(n)
 	
@@ -72,7 +76,21 @@ func update(tile_code : String):
 func _on_player_update_map(index: Array) -> void:
 	tile_index = index
 	print(str("map index ", tile_index))
-	var tile_row = tilemap[tile_index[0]]
+	
+	var tcode : String
+	
+	if tile_index[0] > tilemap.size() - 1 or tile_index[0] < 0:
+		$Player.darken()
+		update("")
+		return
+	
+	var tile_row : Array = tilemap[tile_index[0]]	
+	
+	if tile_index[1] > tile_row.size() -1 or tile_index[1] < 0 :
+		$Player.darken()
+		update("")
+		return
+	
 	update(tile_row[tile_index[1]])
 	
 func add_context_flag(new_context : String):
@@ -83,8 +101,20 @@ func add_context_flag(new_context : String):
 		try_add_inventory.emit(new_context.erase(0,5))
 
 func remove_from_field(item_id : String):
-	var tilemap : TileMapLayer = get_child(2)
+	var tile : TileMapLayer = get_child(2)
 	#for tilemap : TileMapLayer in get_children():
-	for actor in tilemap.get_children():
+	for actor in tile.get_children():
 		if actor.id == item_id:
 			actor.visible = false
+
+
+func _on_player_game_over() -> void:
+	dbox = DialogueBox.instantiate()
+	add_child(dbox)
+	dbox.tree_exited.connect(_on_gameover_dbox_closed)
+	dbox.start($Player.position, "gameover", {"default" : ["Straying too far, you are lost in this place. You can't find the killer, and it would appear you've become their next victim..."]}, context)
+	get_tree().paused = true
+
+func _on_gameover_dbox_closed():
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(StartScreen)

@@ -18,4 +18,5 @@ offset_right = 72.0
 offset_bottom = 157.0
 theme_override_fonts/font = ExtResource("3_i4cpk")
 
+[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="update_map" from="Player" to="." method="_on_player_update_map"]

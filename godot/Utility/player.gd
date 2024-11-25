@@ -7,6 +7,16 @@ var walk_state = "idle"
 var flip : bool
 var tile_index : Array = [0,0]
 signal update_map(index : Array)
+signal game_over
+
+func darken():
+	modulate.a -= 0.2
+	if modulate.a < 0.2:
+		game_over.emit()
+
+func lighten():
+	if modulate.a < 1:
+		modulate.a += 0.2
 
 func _physics_process(delta):
 		input_direction = Vector2.ZERO
