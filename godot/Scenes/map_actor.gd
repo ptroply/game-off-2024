@@ -6,9 +6,9 @@ signal trigger_entered(event_id : String, trigger_position : Vector2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if FileAccess.file_exists(sprite_filepath):
-		$CharacterSprite.sprite_frames = load(sprite_filepath)
-		$CharacterSprite.play("idle")
+	#if FileAccess.file_exists(sprite_filepath):
+	$CharacterSprite.sprite_frames = load(sprite_filepath)
+	$CharacterSprite.play("idle")
 
 
 func _on_body_entered(body: Node2D) -> void:
