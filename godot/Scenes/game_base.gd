@@ -12,6 +12,7 @@ var items : Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicBox.set_music("walking_around_clean")
 	for i in item_dict.keys():
 		items.get_or_add(i)
 

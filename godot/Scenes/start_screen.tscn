@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkmqciqsiugsd"]
+
+[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_l0nig"]
+[ext_resource type="Texture2D" uid="uid://dq6l42y3i3h55" path="res://Sprites/red-wire-title.png" id="1_o8qls"]
+[ext_resource type="FontFile" uid="uid://bi1g3eepf86as" path="res://Utility/UserInterface/m5_7.tres" id="2_jr7no"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3g2io"]
+content_margin_left = 8.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_l0nig")
+
+[node name="TitleScroll" type="Node2D" parent="."]
+
+[node name="Title" type="Sprite2D" parent="TitleScroll"]
+position = Vector2(0, -8)
+texture = ExtResource("1_o8qls")
+centered = false
+
+[node name="PressStart" type="Label" parent="TitleScroll"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 146.0
+offset_right = 192.0
+offset_bottom = 162.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_jr7no")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3g2io")
+text = "press SPACEBAR to start"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="TitleScroll"]
+offset_top = 192.0
+offset_right = 240.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_jr7no")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3g2io")
+text = "MISSING MAN DIED IN ELECTRIC FIRE \"The enigmatic RED WIRE KILLER appears to have struck again!\"
+
+It's happening again. The details in the report remind you of the twisted case of Adrian Roth, the murderer who made your career when you put him behind bars.
+
+Roth's methodology and the locations of many of his victims are still a mystery to everybody, except for you. You feel the red wire pulling you back to where this all began...
+
+You have gone ahead to Rose Ridge, Wyoming to investigate the latest murder. The police department is not returning your calls, and something in your gut tells you the killer might still be close.
+
+Apon arriving in the evening to check in at the Rose Ridge Drink-Inn, the desk clerk hands you a sealed envelope. Inside is a note...
+
+PER YOUR REQUEST - THE TELEPHONE IS HARDLINED TO INMATE ADRIAN ROTHS CELL AT MSP. YOUR INVESTIGATION WILL END IN 3 DAYS. GOOD LUCK, AGENT.
+"
+autowrap_mode = 2
+
+[node name="Highlight" type="Label" parent="TitleScroll"]
+offset_left = 30.0
+offset_top = 348.0
+offset_right = 74.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(0.941176, 0.054902, 0.054902, 1)
+theme_override_fonts/font = ExtResource("2_jr7no")
+text = "red wire"
+
+[node name="Title2" type="Sprite2D" parent="TitleScroll"]
+position = Vector2(0, 607)
+texture = ExtResource("1_o8qls")
+centered = false

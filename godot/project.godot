@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Off 2024"
-run/main_scene="res://Scenes/game_base.tscn"
+run/main_scene="res://Scenes/start_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://boot-image.png"
 boot_splash/fullsize=false
