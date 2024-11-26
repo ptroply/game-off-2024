@@ -5,11 +5,13 @@ https://animal-village.itch.io/red-wire
 Made for [Game Off 2024](https://itch.io/jam/game-off-2024)
 
 ### Gamepad Controls - *Recommended*
+- Movement = D-pad or Thumbstick
 - Accept = Xbox A
 - Cancel = Xbox B
 - Select = Back
 - Start = Menu
 ### Keyboard Controls
+- Movement = Arrows or WASD
 - Accept = Spacebar
 - Cancel = Backspace
 - Select = Enter
