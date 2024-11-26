@@ -17,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_released("ui_inventory"):
+	if Input.is_action_just_released("ui_select"):
 		if items.values().has(true):
 			var im = InventoryMenu.instantiate()
 			im.start(items, item_dict)

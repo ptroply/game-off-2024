@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 
 		
 	#print($TitleScroll/PressStart.font_color)
-	if Input.is_action_just_released("ui_accept"):
+	if Input.is_action_just_released("ui_home"):
 		get_tree().change_scene_to_file("res://Scenes/game_base.tscn")
 		
 	if $TitleScroll/Title2.global_position.y < -9:

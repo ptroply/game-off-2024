@@ -36,7 +36,7 @@ func _ready() -> void:
 	first.grab_focus()
 
 func _process(_delta):
-	if Input.is_action_just_released("ui_inventory"):
+	if Input.is_action_just_released("ui_cancel"):
 		get_tree().paused = false
 		queue_free()
 
