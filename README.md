@@ -9,11 +9,13 @@ Made for [Game Off 2024](https://itch.io/jam/game-off-2024)
 - Cancel = Xbox B
 - Select = Back
 - Start = Menu
-### Kenboard Controls
+### Keyboard Controls
 - Accept = Spacebar
 - Cancel = Backspace
 - Select = Enter
 - Start = Shift
+
+---
 
 #### _MISSING MAN DIED IN ELECTRIC FIRE_
 > The enigmatic RED WIRE KILLER appears to have struck again! Authorities confirm that Quinn Myers, who was reported missing last week was found dead off Route 91 on Tuesday. The victim was burned in an apparent electrical fire...
