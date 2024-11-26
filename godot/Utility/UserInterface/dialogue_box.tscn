@@ -6,13 +6,14 @@
 
 [node name="DialogueBox" type="Node2D"]
 process_mode = 2
+top_level = true
 position = Vector2(16, 112)
 script = ExtResource("1_h43nf")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -16.0
 offset_right = 224.0
-offset_bottom = 48.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("2_mlpae")

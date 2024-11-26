@@ -4,8 +4,11 @@ var StartScreen : PackedScene = load("res://Scenes/start_screen.tscn")
 
 var context : Array = []
 
-var tilemap : Array = [["chiefs_office","breakroom","jail"],
-["","offices","lobby","hotel_room"]]
+var tilemap : Array = [
+	["voidm10","voidm11","",""],
+	["void00","","",""],
+	["chiefs_office","breakroom","jail","void13"],
+	["","offices","lobby","hotel_room"]]
 
 
 var field_dialogues : Dictionary
@@ -17,6 +20,14 @@ signal ibs
 signal try_add_inventory(context_flag : String)
 
 func _ready() -> void:
+	var tile_x : int
+	var tile_y : int
+	for row : Array in tilemap:
+		if row.has("lobby"):
+			tile_x = row.find("lobby")
+			tile_y = tilemap.find(row)
+	$Player.tile_index = [tile_y, tile_x]
+	
 	$NoiseAnimation.play(str(0))
 	field_dialogues = get_node("/root/DataManager").read_json(str("res://Data/field_dialogues.json"))
 	print(tilemap[$Player.tile_index[0]][$Player.tile_index[1]])
@@ -25,7 +36,7 @@ func _ready() -> void:
 func load_tile(tile_code : String):
 	var path = str("res://Scenes/", tile_code,".tscn")
 	var new_map = load(path)
-	$Label.text = tile_code.capitalize()
+	$Footer/Label.text = tile_code.capitalize()
 	if new_map == null:
 		return
 	var n = new_map.instantiate()

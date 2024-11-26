@@ -5,7 +5,7 @@ var input_direction : Vector2
 @export var speed = 40
 var walk_state = "idle"
 var flip : bool
-var tile_index : Array = [0,1]
+var tile_index : Array
 signal update_map(index : Array)
 signal game_over
 

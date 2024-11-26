@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://otnqhctjnnpk"]
+[gd_scene load_steps=6 format=3 uid="uid://otnqhctjnnpk"]
 
 [ext_resource type="Script" path="res://Scenes/field_map.gd" id="1_6doou"]
 [ext_resource type="PackedScene" uid="uid://cx4lvocyh1oua" path="res://Utility/player.tscn" id="2_psdff"]
 [ext_resource type="FontFile" uid="uid://bi1g3eepf86as" path="res://Utility/UserInterface/m5_7.tres" id="3_i4cpk"]
 [ext_resource type="PackedScene" uid="uid://b3r60xw66ri83" path="res://Utility/noise_animation.tscn" id="3_ru3yn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbw8v"]
+content_margin_left = 8.0
+bg_color = Color(0, 0, 0, 1)
 
 [node name="FieldMap" type="Node2D"]
 script = ExtResource("1_6doou")
@@ -14,12 +18,15 @@ position = Vector2(120, 88)
 
 [node name="NoiseAnimation" parent="." instance=ExtResource("3_ru3yn")]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 144.0
-offset_right = 72.0
-offset_bottom = 157.0
+[node name="Footer" type="Node2D" parent="."]
+top_level = true
+position = Vector2(0, 160)
+
+[node name="Label" type="Label" parent="Footer"]
+offset_right = 240.0
+offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("3_i4cpk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbw8v")
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="update_map" from="Player" to="." method="_on_player_update_map"]

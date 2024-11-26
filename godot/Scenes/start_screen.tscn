@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3g2io"]
 content_margin_left = 8.0
 content_margin_right = 4.0
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0)
 
 [node name="StartScreen" type="Node2D"]
 script = ExtResource("1_l0nig")

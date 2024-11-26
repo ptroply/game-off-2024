@@ -54,7 +54,7 @@ func _on_btn_focus(flag_id : String):
 	var item_name = get_node("InfoBox")
 	if item_name == null:
 		pass
-	else: item_name.set_text(flag_id)
+	else: item_name.set_text(flag_id.capitalize())
 
 #func add_item(item: Item) -> void:
 	#if items.has(item.name):
