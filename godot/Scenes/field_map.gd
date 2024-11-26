@@ -4,22 +4,23 @@ var StartScreen : PackedScene = load("res://Scenes/start_screen.tscn")
 
 var context : Array = []
 
-var tilemap : Array = [["breakroom","jail","wire1"],
-["offices","lobby","hotel_room"]]
+var tilemap : Array = [["chiefs_office","breakroom","jail"],
+["","offices","lobby","hotel_room"]]
 
-var tile_index : Array = [0,0]
 
 var field_dialogues : Dictionary
 var DialogueBox = load("res://Utility/UserInterface/dialogue_box.tscn")
 var dbox
 
+
 signal ibs
 signal try_add_inventory(context_flag : String)
 
 func _ready() -> void:
+	$NoiseAnimation.play(str(0))
 	field_dialogues = get_node("/root/DataManager").read_json(str("res://Data/field_dialogues.json"))
-	print(tilemap[tile_index[0]][tile_index[1]])
-	load_tile(tilemap[tile_index[0]][tile_index[1]])
+	print(tilemap[$Player.tile_index[0]][$Player.tile_index[1]])
+	load_tile(tilemap[$Player.tile_index[0]][$Player.tile_index[1]])
 	
 func load_tile(tile_code : String):
 	var path = str("res://Scenes/", tile_code,".tscn")
@@ -74,27 +75,27 @@ func update(tile_code : String):
 	load_tile(tile_code)
 
 func _on_player_update_map(index: Array) -> void:
-	tile_index = index
-	print(str("map index ", tile_index))
+	$Player.tile_index = index
+	print(str("map index ", $Player.tile_index))
 	
 	var tcode : String
 	
-	if tile_index[0] > tilemap.size() - 1 or tile_index[0] < 0:
+	if $Player.tile_index[0] > tilemap.size() - 1 or $Player.tile_index[0] < 0:
 		$Player.darken()
 		update("")
 		print("Player stray X axis")
 		return
 	
-	var tile_row : Array = tilemap[tile_index[0]]	
+	var tile_row : Array = tilemap[$Player.tile_index[0]]	
 	
-	if tile_index[1] > tile_row.size() -1 or tile_index[1] < 0 :
+	if $Player.tile_index[1] > tile_row.size() -1 or $Player.tile_index[1] < 0 :
 		$Player.darken()
 		update("")
 		print("Player stray Y axis")
 		return
 	
 	$Player.lighten()
-	update(tile_row[tile_index[1]])
+	update(tile_row[$Player.tile_index[1]])
 	
 func add_context_flag(new_context : String):
 	context.push_front(new_context)
@@ -104,11 +105,14 @@ func add_context_flag(new_context : String):
 		try_add_inventory.emit(new_context.erase(0,5))
 
 func remove_from_field(item_id : String):
-	var tile : TileMapLayer = get_child(2)
+	var tile : TileMapLayer
+	for n in get_children():
+		if n is TileMapLayer:
+			tile = n
 	#for tilemap : TileMapLayer in get_children():
 	for actor in tile.get_children():
 		if actor.id == item_id:
-			actor.visible = false
+			actor.queue_free()
 
 
 func _on_player_game_over() -> void:

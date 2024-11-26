@@ -10,7 +10,6 @@ var flash : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	if DataManager.credits_flag == false:
 		$TitleScroll/Prelude.text = prelude["default"]
 		$TitleScroll/Prelude.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
