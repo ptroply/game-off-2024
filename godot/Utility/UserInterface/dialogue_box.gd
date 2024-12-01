@@ -8,18 +8,18 @@ var pop_up : bool
 var portrait : Texture2D
 @onready var label = $Label
 var lock : bool
+var context_dialogue : Array
+
 
 func set_text(value : String):
 	label.text = value
 
 func start(target_position : Vector2, id : String, dialogues : Dictionary, contexts: Array) -> void:
 	print(str("context stack: ", contexts))
-	var context_dialogue : Array
 	
 	for i in range(contexts.size()):
 		if contexts[i] in dialogues:
-			context_dialogue = dialogues[contexts[i]]
-			break
+			context_dialogue += dialogues[contexts[i]]
 	
 	if context_dialogue.is_empty():
 		context_dialogue = dialogues["default"]
@@ -30,10 +30,11 @@ func start(target_position : Vector2, id : String, dialogues : Dictionary, conte
 		if typeof(cd) == TYPE_STRING:
 			label.text += str(cd, "\n")
 		else:
-			var pop = pop_text.instantiate()
-			pop.start(cd)
-			pop.flag_out.connect(_on_flag_out)
-			add_child(pop)
+			if !contexts.has(cd.keys().front()):
+				var pop = pop_text.instantiate()
+				pop.start(cd)
+				pop.flag_out.connect(_on_flag_out)
+				add_child(pop)
 
 	if target_position.y < 80:
 		position.y = 112

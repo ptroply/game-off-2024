@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://d32103xb85bxj"]
+
+[ext_resource type="Texture2D" uid="uid://8n5pn257axfx" path="res://Sprites/SpriteFrames/chief-office-door.png" id="1_s4mj4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjyiu"]
+atlas = ExtResource("1_s4mj4")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjyiu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]

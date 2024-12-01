@@ -13,4 +13,4 @@ id = "ash"
 
 [node name="OfficeDoor" parent="." instance=ExtResource("2_lwicc")]
 position = Vector2(56, 48)
-id = "office door"
+id = "chief_office_door"

@@ -19,6 +19,8 @@ var dbox
 signal ibs
 signal try_add_inventory(context_flag : String)
 
+var void_index = 0
+
 func _ready() -> void:
 	var tile_x : int
 	var tile_y : int
@@ -28,7 +30,7 @@ func _ready() -> void:
 			tile_y = tilemap.find(row)
 	$Player.tile_index = [tile_y, tile_x]
 	
-	$NoiseAnimation.play(str(0))
+	$NoiseAnimation.play(str(void_index))
 	field_dialogues = get_node("/root/DataManager").read_json(str("res://Data/field_dialogues.json"))
 	print(tilemap[$Player.tile_index[0]][$Player.tile_index[1]])
 	load_tile(tilemap[$Player.tile_index[0]][$Player.tile_index[1]])
@@ -92,7 +94,7 @@ func _on_player_update_map(index: Array) -> void:
 	var tcode : String
 	
 	if $Player.tile_index[0] > tilemap.size() - 1 or $Player.tile_index[0] < 0:
-		$Player.darken()
+		player_stray(true)
 		update("")
 		print("Player stray X axis")
 		return
@@ -100,13 +102,28 @@ func _on_player_update_map(index: Array) -> void:
 	var tile_row : Array = tilemap[$Player.tile_index[0]]	
 	
 	if $Player.tile_index[1] > tile_row.size() -1 or $Player.tile_index[1] < 0 :
-		$Player.darken()
+		player_stray(true)
 		update("")
 		print("Player stray Y axis")
 		return
 	
-	$Player.lighten()
+	tcode = tile_row[$Player.tile_index[1]]
+	if tcode.begins_with("void"):
+		player_stray(true)
+	else:
+		player_stray(false)
+
 	update(tile_row[$Player.tile_index[1]])
+	
+func player_stray(dir: bool):
+	if dir:
+		$Player.darken()
+		void_index += 1
+	else:
+		$Player.lighten()
+		if void_index > 0:
+			void_index -= 1
+	$NoiseAnimation.play(str(void_index))
 	
 func add_context_flag(new_context : String):
 	context.push_front(new_context)
