@@ -6,9 +6,7 @@ var InfoBookSystem = load("res://Utility/InfoBookSystem/info_book_system.tscn")
 var InventoryMenu = load("res://Utility/ItemMenu/inventory.tscn")
 @onready var item_dict : Dictionary = get_node("/root/DataManager").read_json("res://Data/items.json")
 
-var items : Dictionary = {
-	"notebook": true
-}
+var items : Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_released("ui_inventory"):
+	if Input.is_action_just_released("ui_select"):
 		if items.values().has(true):
 			var im = InventoryMenu.instantiate()
 			im.start(items, item_dict)

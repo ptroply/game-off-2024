@@ -1,5 +1,6 @@
 extends Node
 
+var credits_flag : bool
 
 func read_json(file_path) -> Dictionary:
 	var file = FileAccess.open(file_path, FileAccess.READ)

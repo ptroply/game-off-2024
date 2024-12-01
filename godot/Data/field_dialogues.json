@@ -145,5 +145,10 @@
         "case a123": [
             "The Chief seems to have a bad habit of getting stuck in the jail cell. Why do you think that is?"
         ]
+    },
+    "gameover": {
+        "default": [
+            "You're lost in this place. You can't catch the killer, and you seem to be their next victim..."
+        ]
     }
 }
